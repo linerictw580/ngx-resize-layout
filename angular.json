@@ -31,6 +31,15 @@
             "tsConfig": "projects/ngx-resize-layout/tsconfig.spec.json",
             "karmaConfig": "projects/ngx-resize-layout/karma.conf.js"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/ngx-resize-layout/**/*.ts",
+              "projects/ngx-resize-layout/**/*.html"
+            ]
+          }
         }
       }
     },
@@ -152,6 +161,15 @@
               "projects/demo/src/styles.scss"
             ],
             "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/demo/**/*.ts",
+              "projects/demo/**/*.html"
+            ]
           }
         }
       }

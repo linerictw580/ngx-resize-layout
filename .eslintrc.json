@@ -1,0 +1,164 @@
+{
+  "root": true,
+  "ignorePatterns": [
+    "projects/**/*"
+  ],
+  "overrides": [
+    {
+      "files": [
+        "*.ts"
+      ],
+      "parserOptions": {
+        "project": [
+          "tsconfig.json"
+        ],
+        "createDefaultProgram": true
+      },
+      "extends": [
+        "eslint:recommended",
+        "plugin:@angular-eslint/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@angular-eslint/template/process-inline-templates",
+        "prettier"
+      ],
+      "rules": {
+        "@typescript-eslint/naming-convention": [
+          "warn",
+          {
+            "selector": "default",
+            "format": ["camelCase"],
+            "leadingUnderscore": "forbid",
+            "trailingUnderscore": "forbid"
+          },
+          {
+            "selector": "variable", // matches var / let / const variables
+            "format": ["camelCase"],
+            "leadingUnderscore": "forbid",
+            "trailingUnderscore": "forbid"
+          },
+          {
+            // object destruction can be anything (normal properties、backend properties etc.)
+            "selector": "variable",
+            "format": ["camelCase", "PascalCase", "UPPER_CASE"],
+            "modifiers": ["destructured"],
+            "leadingUnderscore": "allowSingleOrDouble",
+            "trailingUnderscore": "allowSingleOrDouble"
+          },
+          {
+            // requires non-export functions to start with underscore  (similar to private methods)
+            // class methods or object methods will apply follow-up rules so it doesn't affect
+            "selector": "function",
+            "format": ["camelCase"],
+            "leadingUnderscore": "require",
+            "trailingUnderscore": "forbid"
+          },
+          {
+            // forbid export functions to have leading underscore (similar to public methods)
+            "selector": "function",
+            "format": ["camelCase"],
+            "modifiers": ["exported"],
+            "leadingUnderscore": "forbid",
+            "trailingUnderscore": "forbid"
+          },
+          {
+            "selector": "parameter",
+            "format": ["camelCase", "UPPER_CASE"],
+            "leadingUnderscore": "forbid",
+            "trailingUnderscore": "forbid"
+          },
+          {
+            "selector": "parameterProperty",
+            "format": ["camelCase"],
+            "leadingUnderscore": "forbid",
+            "trailingUnderscore": "forbid"
+          },
+          {
+            "selector": "parameterProperty",
+            "format": ["camelCase"],
+            "modifiers": ["private"],
+            "leadingUnderscore": "require",
+            "trailingUnderscore": "forbid"
+          },
+          {
+            // object properties may need to match backend properties or database columns
+            "selector": "objectLiteralProperty",
+            "format": ["camelCase", "PascalCase", "UPPER_CASE"],
+            "leadingUnderscore": "forbid",
+            "trailingUnderscore": "forbid"
+          },
+          {
+            // object methods will only be executed in the frontend, so camelcase of course
+            "selector": "objectLiteralMethod",
+            "format": ["camelCase"],
+            "leadingUnderscore": "forbid",
+            "trailingUnderscore": "forbid"
+          },
+          {
+            "selector": "enumMember",
+            "format": ["UPPER_CASE"],
+            "leadingUnderscore": "forbid",
+            "trailingUnderscore": "forbid"
+          },
+          {
+            "selector": "interface",
+            "format": ["PascalCase"],
+            "custom": {
+              "regex": "^I[A-Z]",
+              "match": true
+            }
+          },
+          {
+            "selector": "memberLike",
+            "format": ["camelCase", "UPPER_CASE"],
+            "leadingUnderscore": "forbid",
+            "trailingUnderscore": "forbid"
+          },
+          {
+            "selector": "memberLike",
+            "modifiers": ["private"],
+            "format": ["camelCase"],
+            "leadingUnderscore": "require",
+            "trailingUnderscore": "forbid"
+          },
+          {
+            "selector": "memberLike",
+            "modifiers": ["static"],
+            "format": ["UPPER_CASE"],
+            "leadingUnderscore": "forbid",
+            "trailingUnderscore": "forbid"
+          },
+          {
+            "selector": "memberLike",
+            "modifiers": ["private", "static"],
+            "format": ["UPPER_CASE"],
+            "leadingUnderscore": "require",
+            "trailingUnderscore": "forbid"
+          },
+          {
+            "selector": "typeLike", // matches class / interface / typeAlias / enum / typeParameter
+            "format": ["PascalCase"],
+            "leadingUnderscore": "forbid",
+            "trailingUnderscore": "forbid"
+          }
+        ],
+        "@typescript-eslint/no-inferrable-types": [
+          "warn",
+          {
+            "ignoreParameters": true,
+            "ignoreProperties": true
+          }
+        ]
+      }
+    },
+    {
+      "files": [
+        "*.html"
+      ],
+      "extends": [
+        "plugin:@angular-eslint/template/recommended",
+        "prettier"
+      ],
+      "rules": {}
+    }
+  ]
+}
