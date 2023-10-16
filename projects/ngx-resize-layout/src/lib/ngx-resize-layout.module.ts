@@ -1,16 +1,12 @@
 import { NgModule } from '@angular/core';
-import { NgxResizeLayoutComponent } from './ngx-resize-layout.component';
-
-
+import { CommonModule } from '@angular/common';
+import { ErcLayoutComponent } from './components/layout/layout.component';
+import { ErcColComponent } from './components/col/col.component';
+import { ErcRowComponent } from './components/row/row.component';
 
 @NgModule({
-  declarations: [
-    NgxResizeLayoutComponent
-  ],
-  imports: [
-  ],
-  exports: [
-    NgxResizeLayoutComponent
-  ]
+  declarations: [ErcLayoutComponent, ErcColComponent, ErcRowComponent],
+  imports: [CommonModule],
+  exports: [ErcLayoutComponent],
 })
-export class NgxResizeLayoutModule { }
+export class NgxResizeLayoutModule {}

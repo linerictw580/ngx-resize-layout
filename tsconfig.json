@@ -12,8 +12,11 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "paths": {
+      // "ngx-resize-layout": [
+      //   "dist/ngx-resize-layout" // import from dist folder (production)
+      // ],
       "ngx-resize-layout": [
-        "dist/ngx-resize-layout"
+        "projects/ngx-resize-layout/src/public-api.ts" // direct import from project library (development)
       ]
     },
     "declaration": false,
@@ -23,10 +26,7 @@
     "importHelpers": true,
     "target": "es2020",
     "module": "es2020",
-    "lib": [
-      "es2020",
-      "dom"
-    ]
+    "lib": ["es2020", "dom"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,

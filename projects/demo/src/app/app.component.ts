@@ -1,10 +1,23 @@
 import { Component } from '@angular/core';
+import { ErcLayoutConfig } from 'ngx-resize-layout';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'demo';
+  config: ErcLayoutConfig = {
+    rows: [
+      {
+        id: 'row1',
+      },
+      {
+        id: 'row2',
+      },
+      {
+        id: 'row3',
+      },
+    ],
+  };
 }
