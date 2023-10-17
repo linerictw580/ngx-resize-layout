@@ -1,4 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ErcBaseUnitComponent } from '../base-unit/base-unit.component';
+import { ErcColConfig } from '../../models/resize.model';
 
 @Component({
   selector: 'erc-col',
@@ -6,4 +8,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./col.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ErcColComponent {}
+export class ErcColComponent extends ErcBaseUnitComponent {
+  @Input() config!: ErcColConfig;
+
+  constructor() {
+    super();
+  }
+}

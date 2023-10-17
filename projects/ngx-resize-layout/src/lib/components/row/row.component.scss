@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  flex-flow: row nowrap;
+  flex: 1;
+
+  box-sizing: content-box;
+  position: relative;
+
+  background: white;
+
+  border-style: solid;
+  border-color: #f0f0f0;
+}

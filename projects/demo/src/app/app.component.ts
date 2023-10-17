@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, TemplateRef, ViewChild, ViewContainerRef } from '@angular/core';
 import { ErcLayoutConfig } from 'ngx-resize-layout';
 
 @Component({
@@ -20,4 +20,6 @@ export class AppComponent {
       },
     ],
   };
+
+  constructor(private _vcr: ViewContainerRef) {}
 }

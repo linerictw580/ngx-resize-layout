@@ -1,6 +1,9 @@
 export interface ErcLayoutConfig {
   rows: ErcRowConfig[];
-  /**number of pixels in between rows and columns */
+  /**
+   * number of pixels in between rows and columns
+   * @default 8
+   */
   spacing?: number;
 }
 

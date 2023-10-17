@@ -1,3 +1,4 @@
 <div class="erc-container">
-  <erc-row *ngFor="let row of config.rows; first as first; last as last; index as index"></erc-row>
+  <!-- <erc-row *ngFor="let row of config.rows; first as first; last as last; index as index"></erc-row> -->
+  <ng-content select="erc-row"></ng-content>
 </div>

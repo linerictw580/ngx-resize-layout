@@ -3,5 +3,5 @@
  */
 
 export * from './lib/models/resize.model';
-export * from './lib/ngx-resize-layout.service';
+export * from './lib/layout.service';
 export * from './lib/ngx-resize-layout.module';
