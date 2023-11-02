@@ -20,3 +20,9 @@ export interface ErcRowResized {}
 export interface ErcColResized {}
 
 export type ErcResizeSource = 'self' | 'ancestor';
+
+export interface ErcLayoutInfo {
+  layer: number;
+  index: number;
+  maxIndex: number;
+}

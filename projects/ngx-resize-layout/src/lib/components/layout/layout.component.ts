@@ -17,6 +17,7 @@ import { LayoutService } from '../../layout.service';
   selector: 'erc-layout',
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.scss'],
+  providers: [LayoutService],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ErcLayoutComponent implements OnInit, AfterContentInit {
@@ -38,15 +39,7 @@ export class ErcLayoutComponent implements OnInit, AfterContentInit {
   }
 
   ngAfterContentInit(): void {
-    // set info for each row components after content is projected
-    // we need to do this for each row component to know its position (e.g. row order index and layer)
-    const maxIndex = this._ercRows.length - 1;
-    this._ercRows.forEach((ercRow, index) => {
-      ercRow.layer = 1;
-      ercRow.index = index;
-      ercRow.first = index === 0;
-      ercRow.last = index === maxIndex;
-    });
+    this._layoutService.setLayoutInfoForChild(this._ercRows.toArray());
 
     console.log('erc-layout ngAfterContentInit');
   }
