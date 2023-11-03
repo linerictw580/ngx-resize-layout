@@ -28,6 +28,8 @@ export class ErcBaseUnitComponent implements AfterViewInit {
 
   protected layoutService!: LayoutService;
 
+  public displayHandle!: boolean;
+
   constructor(layoutService: LayoutService) {
     this.layoutService = layoutService;
   }
@@ -43,6 +45,12 @@ export class ErcBaseUnitComponent implements AfterViewInit {
     this.index = index;
     this.first = index === 0;
     this.last = index === maxIndex;
+
+    if (this.type === 'row') {
+      this.displayHandle = this.isRootLayer || (!this.isRootLayer && !this.last);
+    } else if (this.type === 'column') {
+      this.displayHandle = !this.last;
+    }
 
     // console.log('onSetLayoutInfo', { layer, type: this.type, index });
   }

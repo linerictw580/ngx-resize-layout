@@ -5,6 +5,8 @@ export interface ErcLayoutConfig {
    * @default 8
    */
   spacing?: number;
+
+  borderColor?: string;
 }
 
 export interface ErcRowConfig {

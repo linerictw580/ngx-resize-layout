@@ -21,7 +21,8 @@ import { LayoutService } from '../../layout.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ErcLayoutComponent implements OnInit, AfterContentInit {
-  @HostBinding('style.--spacing') public spacing = '8px';
+  @HostBinding('style.--spacing') public spacing!: string;
+  @HostBinding('style.--border-color') public borderColor!: string;
 
   @ContentChildren(ErcRowComponent) private _ercRows!: QueryList<ErcRowComponent>;
 
@@ -36,6 +37,7 @@ export class ErcLayoutComponent implements OnInit, AfterContentInit {
     this._layoutService.spacing = this.config.spacing ?? 8;
 
     this.spacing = `${this._layoutService.spacing}px`;
+    this.borderColor = this.config.borderColor ?? '#aaa';
   }
 
   ngAfterContentInit(): void {

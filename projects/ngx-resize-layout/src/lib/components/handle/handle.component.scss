@@ -1,19 +1,57 @@
 :host {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: var(--spacing);
-}
-
-.erc-handle {
-  display: block;
   position: absolute;
   z-index: 1;
-  width: var(--spacing);
-  height: var(--spacing);
-  line-height: var(--spacing);
-  user-select: none;
-  background: transparent;
+  display: block;
+  // background: rgba($color: #000000, $alpha: 0.6);
+
+  &.erc-handle-left, &.erc-handle-right {
+    cursor: col-resize;
+    width: var(--spacing);
+    height: 100%;
+
+    span {
+      width: 4px;
+      height: 20px;
+      border-width: 0 1px;
+    }
+  }
+  &.erc-handle-top, &.erc-handle-bottom {
+    cursor: row-resize;
+    width: 100%;
+    height: var(--spacing);
+
+    span {
+      width: 20px;
+      height: 4px;
+      border-width: 1px 0;
+    }
+  }
+  &.erc-handle-left {
+    left: 0;
+    top: 0;
+    margin-left: calc(var(--spacing) * -1);
+  }
+  &.erc-handle-right {
+    right: 0;
+    top: 0;
+    margin-right: calc(var(--spacing) * -1);
+  }
+  &.erc-handle-top {
+    top: 0;
+    left: 0;
+    margin-bottom: calc(var(--spacing) * -1);
+  }
+  &.erc-handle-bottom {
+    bottom: 0;
+    left: 0;
+    margin-bottom: calc(var(--spacing) * -1);
+  }
+}
+
+.handle {
+  display: block;
+  width: 100%;
+  height: 100%;
 
   span {
     display: block;
@@ -22,47 +60,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 1px solid #ccc;
+    border-style: solid;
+    border-color: #ccc;
   }
-}
-.erc-handle-left, .erc-handle-right {
-  cursor: col-resize;
-  height: 100%;
-
-  span {
-    width: 4px;
-    height: 20px;
-    border-width: 0 1px;
-  }
-}
-.erc-handle-top, .erc-handle-bottom {
-  cursor: row-resize;
-  width: 100%;
-
-  span {
-    width: 20px;
-    height: 4px;
-    border-width: 1px 0;
-  }
-}
-
-.erc-handle-left {
-  left: 0;
-  top: 0;
-  margin-left: calc(var(--resize-spacing) * -1);
-}
-.erc-handle-right {
-  right: 0;
-  top: 0;
-  margin-right: calc(var(--resize-spacing) * -1);
-}
-.erc-handle-top {
-  top: 0;
-  left: 0;
-  margin-bottom: calc(var(--resize-spacing) * -1);
-}
-.erc-handle-bottom {
-  bottom: 0;
-  left: 0;
-  margin-bottom: calc(var(--resize-spacing) * -1);
 }
